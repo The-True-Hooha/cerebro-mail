@@ -1,0 +1,22 @@
+# Build outputs
+.next/
+dist/
+build/
+
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Go code (explicitly exclude)
+**/*.go
+go.mod
+go.sum
+go.work
+
+# Generated files
+**/generated/
+**/api/gen/
+
+# Misc
+.DS_Store
+.env*

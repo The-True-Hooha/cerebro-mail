@@ -34,3 +34,9 @@ run-smtp:
 dev:
 	@echo "Starting development environment..."
 	cd web && pnpm run dev
+
+# Format Go code
+format-go:
+	@echo "Formatting Go code..."
+	@gofmt -w ./services
+	@gofmt -w ./internal
