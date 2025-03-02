@@ -1,0 +1,36 @@
+.PHONY: setup build test run-smtp
+
+#setup the project
+setup:
+	@echo "preparing and setting up cerebro",
+	cd web && pnpm install
+	gow work sync
+
+#builds all go services
+build-go:
+	@echo "Building the services functions"
+	go build ./services/smtp
+	go build ./services/campaign
+	go build ./services/analytics
+	go build ./services/auth
+
+#build the web application
+build-cerebro-web:
+	@echo "Building the next app for cerebro web"
+	cd web && pnpm run build
+
+# Run tests
+test:
+	@echo "Running tests..."
+	go test ./services/... ./internal/...
+	cd web && pnpm run test
+
+# Run SMTP service
+run-smtp:
+	@echo "Starting SMTP service..."
+	go run ./services/smtp
+
+# Run development environment
+dev:
+	@echo "Starting development environment..."
+	cd web && pnpm run dev
