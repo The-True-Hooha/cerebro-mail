@@ -3,14 +3,17 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "dev": {
       "persistent": true,
       "cache": false
     },
-    "lint": {}
+    "lint": {
+      "dependsOn": ["^lint"]
+    }
   },
-  "globalDependencies": ["**/.env.**", "tsconfig.json"]
+  "globalDependencies": ["./.env*"],
+  "globalEnv": ["./.env.stage.dev"]
   
 }

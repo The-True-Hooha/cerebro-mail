@@ -1,5 +1,6 @@
 {
   "name": "cerebro-web",
+  "private": "true",
   "version": "1.0.0",
   "workspaces": [
     "app/*",
@@ -8,16 +9,33 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "clean": "turbo run clean"
+    "build:admin": "turbo build --filter=admin",
+    "build:landing": "turbo build --filter=landing",
+    "build:editor": "turbo build --filter=editor",
+    "build:web": "turbo build --filter=admin --filter=landing --filter=editor",
+    "build": "turbo build",
+    "dev:landing": "turbo dev --filter=landing",
+    "dev:admin": "turbo dev --filter=admin",
+    "dev:editor": "turbo dev --filter=editor",
+    "dev": "pnpm load-env -- turbo dev",
+    "lint": "turbo lint",
+    "load-env": "dotenv -e ./.env.stage.dev",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"web/**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "format:check": "prettier --check \"web/**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "lint:fix": "eslint \"web/**/*.{js,jsx,ts,tsx}\" --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.5.2",
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^9",
+    "eslint-config-prettier": "^10.0.2",
+    "prettier": "^3.5.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.4.4"
   }
 }
