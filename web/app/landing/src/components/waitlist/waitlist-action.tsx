@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 import React, { useState } from 'react';
 
-// eslint-disable-line @typescript-eslint/no-unused-vars
+
 export default function WaitlistForm({ onComplete }: { onComplete: () => void }) {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -30,7 +31,6 @@ export default function WaitlistForm({ onComplete }: { onComplete: () => void })
       setEmail('');
       setName('');
       setUseCase('');
-      // eslint-disable-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setStatus('error');
     }
@@ -49,7 +49,9 @@ export default function WaitlistForm({ onComplete }: { onComplete: () => void })
     return (
       <div className="mx-auto w-full max-w-md rounded-lg border border-green-200 bg-green-50 p-6 shadow-sm">
         <h3 className="mb-2 text-lg font-medium text-green-800">You are on the list!</h3>
-        <p className="text-green-700">Thanks for joining our waitlist. We&apos;ll be in touch soon.</p>
+        <p className="text-green-700">
+          Thanks for joining our waitlist. We&apos;ll be in touch soon.
+        </p>
       </div>
     );
   }

@@ -46,7 +46,7 @@ export default function Footer() {
             label="contact us"
             targetTextColor="#faf8ec"
             className="text-hotOrange cursor-pointer"
-            onClick={() => window.location.href = "mailto:hello@dev.com"}
+            onClick={() => window.location.href = "mailto:owogogahhero@outlook.com"}
           />
         </motion.span>
       </motion.div>
