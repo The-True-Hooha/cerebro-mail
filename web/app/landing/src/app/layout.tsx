@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
+import { BackgroundLines } from '@/components/ui/bg-lines';
 
 import './globals.css';
 
@@ -18,16 +18,6 @@ const reckless = localFont({
     { path: './fonts/RecklessTRIAL-Medium.woff2', weight: '500' },
   ],
   variable: '--font-reckless',
-});
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -53,9 +43,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} ${reckless.variable} ${abcdDiatype.variable} antialiased`}
+        className={`${reckless.variable} ${abcdDiatype.variable} h-screen overflow-hidden antialiased`}
       >
-        {children}
+        <BackgroundLines className="fixed inset-0 -z-10">
+          <div></div>
+        </BackgroundLines>
+        <main className="relative z-10 h-screen w-screen">{children}</main>
       </body>
     </html>
   );

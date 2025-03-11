@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-abcDiatype: 'ABCDiatype', 'Trebuchet MS', sans-serif;
   --font-reckless: 'Reckless', Georgia, serif;
   --color-smokyBlack: oklch(0.147 0.004 49.25);
@@ -16,10 +14,29 @@
 }
 
 :root {
+  --backdrop:#faf8ec;
   --background: #ffffff;
   --foreground: #171717;
   --background-start-rgb: 231, 231, 245;
   --background-end-rgb: 255, 255, 255;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.hide-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,7 +48,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--color-smokyBlack);
+  background: var(--backdrop);
   font-family: var(--font-abcd-diatype), sans-serif;
   position: relative;
   min-height: 100vh;
@@ -39,14 +56,14 @@ body {
 
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: -1;
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 0px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 0px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 0px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 0px);
   background-size: 60px 60px;
   pointer-events: none;
 }
