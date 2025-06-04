@@ -1,28 +1,11 @@
-# Nebula Mail Development TODO
+# Cerebro Mail Development TODO
+
+![Architecture Diagram](architecture.png "System Architecture")
 
 ## Initial Setup
 
 - [x] Initialize monorepo structure
 - [x] Set up Go modules and package management
-- [ ] Configure gRPC and protocol buffers
-- [ ] Set up Docker development environment
-- [ ] Configure CI/CD pipelines
-- [ ] Create initial documentation structure
-
-## Core SMTP Server (Go)
-
-- [ ] Design SMTP server architecture
-- [ ] Implement basic SMTP server functionality
-- [ ] Add worker pool for asynchronous email processing
-- [ ] Implement queue integration (Redis/RabbitMQ)
-- [ ] Add rate limiting and throttling
-- [ ] Implement IP rotation logic
-- [ ] Add DKIM/SPF/DMARC support
-- [ ] Create retry mechanism
-- [ ] Implement bounce handling
-- [ ] Add metrics collection
-- [ ] Create tests for all components
-- [ ] Implement gRPC interfaces for internal communication
 
 ## Database Setup
 
@@ -31,11 +14,11 @@
 - [ ] Implement data access layer
 - [ ] Configure connection pooling
 - [ ] Set up Apache Pinot for analytics
-  - [ ] Configure Pinot schema for email events
-  - [ ] Set up real-time ingestion
-  - [ ] Create aggregation tables
-  - [ ] Implement retention policies
-  - [ ] Configure queries for dashboards
+- [ ] Configure Pinot schema for email events
+- [ ] Set up real-time ingestion
+- [ ] Create aggregation tables
+- [ ] Implement retention policies
+- [ ] Configure queries for dashboards
 
 ## Campaign Management Service
 
@@ -131,22 +114,45 @@
 - [ ] Add anomaly detection
 - [ ] Perform security testing
 
-## Documentation
+## CONCISE ACTUAL READABLE LIST
 
-- [ ] Create API documentation
-- [ ] Write user guides
-- [ ] Create admin documentation
-- [ ] Add developer documentation
-- [ ] Create onboarding guides
-- [ ] Document best practices
-- [ ] Add troubleshooting guides
+Campaign Management:
 
-## Testing
+- Unlimited campaigns per account
+- Custom campaign variables
+- Sequence previews
+- Automated follow-ups with custom steps
+- Smart scheduling
+- Spam-avoidance system
+- Campaign results dashboard
 
-- [ ] Implement unit tests for all services
-- [ ] Create integration tests
-- [ ] Add end-to-end tests
-- [ ] Implement load testing
-- [ ] Create chaos testing scenarios
-- [ ] Add performance benchmarks
-- [ ] Implement continuous testing in CI/CD
+Contact Management:
+
+- Unlimited contacts per account
+- CSV import with ML double-check and field mapping
+- Intuitive custom fields creation and management
+- Contact list management
+- Out-of-office AI recognition
+- Block list for domains
+
+Mailbox Management:
+
+- Unlimited mailboxes per account
+- Support for Gmail and Outlook
+- Smart mailing schedule
+- Custom tracking domain (coming soon)
+- Mailbox health protection suggestions (coming soon)
+
+Analytics & Reporting:
+
+- Reply and bounce tracking
+- Statistical data at each stage of outreach
+- Clear dashboard and campaign performance metrics
+- CRM integration (coming soon)
+- API for dashboard sharing with stakeholders (coming soon)
+
+Team Collaboration:
+
+- Create or join organizations
+- Invite team members and assign roles
+- Organize campaigns into projects
